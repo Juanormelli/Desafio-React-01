@@ -36,10 +36,16 @@ export function TaskList() {
     const index = tasks.findIndex(task => task.id === id)
 
     
+    if(tasks[index].isComplete===false){
+      tasks[index].isComplete=true
+    }
+    else{
+      tasks[index].isComplete=false
+    }
+    
 
-    tasks[index].isComplete=true
+    setTasks(()=>[...tasks])
 
-    setTasks(tasks)
 
   }
 
